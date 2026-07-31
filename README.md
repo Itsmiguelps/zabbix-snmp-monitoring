@@ -18,7 +18,7 @@ Implementación de una red LAN con Router y Switch Cisco IOS, servidor DHCP, com
 
 ## Topología
 
-![Topología de red](<img width="532" height="365" alt="image" src="https://github.com/user-attachments/assets/530105dd-7032-4c5b-a1cf-b3e9f33da20a" />)
+<img width="532" height="365" alt="image" src="https://github.com/user-attachments/assets/530105dd-7032-4c5b-a1cf-b3e9f33da20a" />
 
 | Dispositivo | Interfaz | IP | Función |
 |---|---|---|---|
