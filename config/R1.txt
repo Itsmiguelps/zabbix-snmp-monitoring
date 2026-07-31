@@ -1,0 +1,32 @@
+enable
+configure terminal
+hostname R1
+!
+interface e0/0
+ description WAN-Net
+ ip address dhcp
+ no shutdown
+!
+interface e0/1
+ description LAN
+ ip address 10.7.41.1 255.255.255.0
+ no shutdown
+!
+! --- DHCP Server LAN ---
+ip dhcp excluded-address 10.7.41.1 10.7.41.10
+ip dhcp pool LAN_POOL
+ network 10.7.41.0 255.255.255.0
+ default-router 10.7.41.1
+ dns-server 8.8.8.8
+ lease 7
+exit
+!
+! --- SNMP solo lectura ---
+snmp-server community P4ssw0rdRO RO
+snmp-server location ITLA-Lab
+snmp-server contact admin@itla.edu.do
+snmp-server enable traps
+snmp-server host 10.7.41.10 version 2c P4ssw0rdRO
+!
+end
+write memory
